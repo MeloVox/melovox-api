@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-    return sequelize.define('User', {
+    const User = sequelize.define('User', {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,5 +22,14 @@ export default (sequelize, DataTypes) => {
       password: {
         type: DataTypes.STRING
       }
-    })
+    });
+
+    User.associate = (models) => {
+      User.hasMany(models.Review, {
+        foreignKey: 'userId',
+        as: 'reviews'
+      });
+    };
+    
+    return User;
   }

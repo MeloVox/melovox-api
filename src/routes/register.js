@@ -23,7 +23,7 @@ export default (app) => {
             if (error instanceof UniqueConstraintError) {
               return res.status(400).json({ message: error.message, error})
             }
-            const message = 'Le compte n\'a pas pu être créer. Réessayer dans quelques intants'
+            const message = 'Le compte n\'a pas pu être créer. Réessayer dans quelques instants'
             res.status(500).json({ message, data: error })
           })
     })

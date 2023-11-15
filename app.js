@@ -12,6 +12,7 @@ import getAccountInfo from './src/routes/getAccountInfo.js'
 import removeAccount from './src/routes/removeAccount.js'
 import updateEmail from './src/routes/updateEmail.js'
 import updatePassword from './src/routes/updatePassword.js'
+import createReview from './src/routes/review/createReview.js'
 
 const app = express()
 const port = process.env.PORT || 3333
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 })
 
 login(app)
+createReview(app)
 register(app)
 getAccountInfo(app)
 removeAccount(app)
