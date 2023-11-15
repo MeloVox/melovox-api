@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 
 const credentials = {
   "HOST": "localhost",
-  "DB_NAME": "yfest",
+  "DB_NAME": "melovox",
   "DB_USER": "postgres",
   "DB_PASSWORD": "postgres"
 }
