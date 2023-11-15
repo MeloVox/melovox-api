@@ -24,6 +24,10 @@ export default (sequelize, DataTypes) => {
         min: 1,
         max: 5
       }
+    },
+    comment: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   });
 
