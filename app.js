@@ -13,6 +13,7 @@ import removeAccount from './src/routes/removeAccount.js'
 import updateEmail from './src/routes/updateEmail.js'
 import updatePassword from './src/routes/updatePassword.js'
 import createReview from './src/routes/review/createReview.js'
+import getReviewsByMusicOrAlbum from './src/routes/review/getReviewsByMusicOrAlbum.js'
 
 const app = express()
 const port = process.env.PORT || 3333
@@ -30,13 +31,17 @@ app.get('/', (req, res) => {
     res.json('Hello, melovox-api is ready to use !')
 })
 
+//Account
 login(app)
-createReview(app)
 register(app)
 getAccountInfo(app)
 removeAccount(app)
 updateEmail(app)
 updatePassword(app)
+
+//Review
+createReview(app)
+getReviewsByMusicOrAlbum(app)
 
 // Gestion d'erreurs
 app.use(({res}) => {
