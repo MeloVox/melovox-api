@@ -14,6 +14,7 @@ import updateEmail from './src/routes/updateEmail.js'
 import updatePassword from './src/routes/updatePassword.js'
 import createReview from './src/routes/review/createReview.js'
 import getReviewsByMusicOrAlbum from './src/routes/review/getReviewsByMusicOrAlbum.js'
+import handleGoogle from './src/routes/handleGoogle.js'
 
 const app = express()
 const port = process.env.PORT || 3333
@@ -38,6 +39,7 @@ getAccountInfo(app)
 removeAccount(app)
 updateEmail(app)
 updatePassword(app)
+handleGoogle(app)
 
 //Review
 createReview(app)

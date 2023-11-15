@@ -12,13 +12,19 @@ export default (app) =>  {
                 console.log(message);
                 return res.status(404).json({ message })
             }
+
+            if(user.authGoogle) {
+                const message = `Veuillez utiliser la connexion via google`
+                console.log(message);
+                return res.status(404).json({ message })
+            }
   
             return bcrypt.compare(req.body.password, user.password).then(isPasswordValid => {
                 if(!isPasswordValid) {
                     const message = `Le mot de passe est incorrect.`
                     return res.status(401).json({ message })
                 }
-  
+
             // Générer un jeton JWT valide pendant 24 heures.
             const token = jwt.sign(
               { userId: user.id },

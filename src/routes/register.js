@@ -11,6 +11,7 @@ export default (app) => {
             User.create({
                 email: req.body.email,
                 password: pass,
+                googleAuth: false
         }))
           .then((email) => {
             const message = `Le compte ${req.body.email} a bien été créer.`

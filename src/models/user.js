@@ -21,6 +21,9 @@ export default (sequelize, DataTypes) => {
       },
       password: {
         type: DataTypes.STRING
+      },
+      googleAuth: {
+        type: DataTypes.BOOLEAN
       }
     });
 

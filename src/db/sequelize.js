@@ -33,7 +33,7 @@ export const initDb = () => {
   return sequelize.sync({ force: true }).then(_ => {
     const admin_pass = 'admin'
     bcrypt.hash(admin_pass, 10)
-      .then(hash => User.create({ email: 'admin@admin.com', password: hash }))
+      .then(hash => User.create({ email: 'admin@admin.com', password: hash, googleAuth: false }))
       .then(user => console.log(user.toJSON()))
 
     console.log('La base de donnée a bien été initialisée !')
