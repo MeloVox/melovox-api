@@ -3,15 +3,27 @@ import jwt from 'jsonwebtoken';
 import privateKey from '../auth/private_key.js';
 import { User } from '../db/sequelize.js'
 
-const client = new OAuth2Client();
+const client = new OAuth2Client({
+    clientId: "29466533-q1fnr16hlq41cpbi2o8m47rql33vpcvj.apps.googleusercontent.com",
+    clientSecret: "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",
+    redirectUri: "http://localhost:5173",
+    project_id: 'melovox'
+});
 
 export default (app) => {
-    app.post('/api/handlegoogle', (req, res) => {
+    app.post('/api/handlegoogle', async (req, res) => {
         console.log(req.body);
 
-        const { clientId, credential } = req.body
+        const { clientId, credential, code } = req.body
+
+
+        if(code) {
+            const { tokens } = await client.getToken(code.toString())
+            client.setCredentials(tokens)
+        }
+
         client.verifyIdToken({
-            idToken: credential,
+            idToken: credential || client.credentials.id_token,
             audience: clientId,
         })
             .catch((err) => {
