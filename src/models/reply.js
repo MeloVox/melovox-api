@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-  const Review = sequelize.define('Review', {
+  const Reply = sequelize.define('Reply', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -9,21 +9,9 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    musicId: {
+    reviewId: {
       type: DataTypes.INTEGER,
       allowNull: true,
-    },
-    albumId: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
-    rating: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-      validate: {
-        min: 1,
-        max: 5
-      }
     },
     comment: {
       type: DataTypes.STRING,
@@ -31,16 +19,16 @@ export default (sequelize, DataTypes) => {
     }
   });
 
-  Review.associate = (models) => {
-    Review.belongsTo(models.User, {
+  Reply.associate = (models) => {
+    Reply.belongsTo(models.User, {
       foreignKey: 'userId',
       as: 'user'
     });
-    Review.hasMany(models.Reply, {
+    Reply.belongsTo(models.Review, {
       foreignKey: 'reviewId',
-      as: 'replys'
+      as: 'reply'
     });
   };
 
-  return Review;
+  return Reply;
 };

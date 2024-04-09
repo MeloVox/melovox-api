@@ -15,6 +15,9 @@ import updatePassword from './src/routes/updatePassword.js'
 import createReview from './src/routes/review/createReview.js'
 import deleteReview from './src/routes/review/deleteReview.js'
 import getReviews from './src/routes/review/getReviews.js'
+import createReply from './src/routes/reply/createReply.js'
+import deleteReply from './src/routes/reply/deleteReply.js'
+import getReplies from './src/routes/reply/getReplies.js'
 import handleGoogle from './src/routes/handleGoogle.js'
 
 const app = express()
@@ -46,6 +49,11 @@ handleGoogle(app)
 createReview(app)
 deleteReview(app)
 getReviews(app)
+
+//Reply
+createReply(app)
+deleteReply(app)
+getReplies(app)
 
 // Gestion d'erreurs
 app.use(({res}) => {

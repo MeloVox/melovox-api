@@ -1,6 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize'
 import UserModel from '../models/user.js'
 import ReviewModel from '../models/review.js'
+import ReplyModel from '../models/reply.js'
 import bcrypt from 'bcrypt'
 
 const credentials = {
@@ -28,6 +29,7 @@ const sequelize = new Sequelize(db_name, DB_USER, db_password, {
 
 export const User = UserModel(sequelize, DataTypes)
 export const Review = ReviewModel(sequelize, DataTypes)
+export const Reply = ReplyModel(sequelize, DataTypes)
 
 export const initDb = () => {
   return sequelize.sync({ force: true }).then(_ => {
