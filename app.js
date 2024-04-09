@@ -13,7 +13,7 @@ import removeAccount from './src/routes/removeAccount.js'
 import updateEmail from './src/routes/updateEmail.js'
 import updatePassword from './src/routes/updatePassword.js'
 import createReview from './src/routes/review/createReview.js'
-import getReviewsByMusicOrAlbum from './src/routes/review/getReviewsByMusicOrAlbum.js'
+import getReviews from './src/routes/review/getReviews.js'
 import handleGoogle from './src/routes/handleGoogle.js'
 
 const app = express()
@@ -43,7 +43,7 @@ handleGoogle(app)
 
 //Review
 createReview(app)
-getReviewsByMusicOrAlbum(app)
+getReviews(app)
 
 // Gestion d'erreurs
 app.use(({res}) => {
