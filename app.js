@@ -13,6 +13,7 @@ import removeAccount from './src/routes/removeAccount.js'
 import updateEmail from './src/routes/updateEmail.js'
 import updatePassword from './src/routes/updatePassword.js'
 import createReview from './src/routes/review/createReview.js'
+import deleteReview from './src/routes/review/deleteReview.js'
 import getReviews from './src/routes/review/getReviews.js'
 import handleGoogle from './src/routes/handleGoogle.js'
 
@@ -43,6 +44,7 @@ handleGoogle(app)
 
 //Review
 createReview(app)
+deleteReview(app)
 getReviews(app)
 
 // Gestion d'erreurs
