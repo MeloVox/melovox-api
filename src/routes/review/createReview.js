@@ -3,13 +3,14 @@ import { ValidationError, UniqueConstraintError} from 'sequelize'
 
 export default (app) => {
     app.post('/api/createReview', (req, res) => {
-        const { userId, musicId, albumId, rating } = req.body;
+        const { userId, musicId, albumId, rating, comment } = req.body;
 
         Review.create({
             userId,
             musicId,
             albumId,
             rating,
+            comment
         }).then(() => {
             res.json({ message: 'Note crée' })
           })

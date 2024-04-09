@@ -34,14 +34,14 @@ export default (app) => {
         res.status(400).json({ message: 'Veuillez fournir un ID de musique ou d\'album dans la requête.' });
     }
   })
-}
 
-function average(reviews)
-{
-  let sum = 0;
-  reviews.forEach(review => {
-    sum += review.rating;
-  });
+  function average(reviews)
+  {
+    let sum = 0;
+    reviews.forEach(review => {
+      sum += review.rating;
+    });
 
-  return sum / reviews.length;
+    return sum / reviews.length;
+  }
 }
