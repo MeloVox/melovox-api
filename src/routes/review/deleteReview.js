@@ -1,7 +1,7 @@
 import { Review } from '../../db/sequelize.js';
 
 export default (app) => {
-  app.post('/api/deleteReview', (req, res) => {
+  app.delete('/api/deleteReview', (req, res) => {
     const { id } = req.body;
 
     if (!id) {

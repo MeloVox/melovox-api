@@ -9,19 +9,19 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    musicId: {
-      type: DataTypes.INTEGER,
+    artist: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    albumId: {
-      type: DataTypes.INTEGER,
+    album: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
     rating: {
       type: DataTypes.FLOAT,
       allowNull: false,
       validate: {
-        min: 1,
+        min: 0.5,
         max: 5
       }
     },
