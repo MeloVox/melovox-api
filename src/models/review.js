@@ -9,11 +9,27 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    artist: {
+    userPhoto: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    album: {
+    idArtist: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    idAlbum: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    idMusic: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    artistName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    albumName: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -27,7 +43,7 @@ export default (sequelize, DataTypes) => {
     },
     comment: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     }
   });
 
