@@ -32,7 +32,7 @@ export const Review = ReviewModel(sequelize, DataTypes)
 export const Reply = ReplyModel(sequelize, DataTypes)
 
 export const initDb = () => {
-  return sequelize.sync({ force: true }).then(_ => {
+  return sequelize.sync({ force: false }).then(_ => {
     const admin_pass = 'admin'
     bcrypt.hash(admin_pass, 10)
       .then(hash => User.create({ email: 'admin@admin.com', password: hash, googleAuth: false }))

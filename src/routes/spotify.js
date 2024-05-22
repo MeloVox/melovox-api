@@ -32,6 +32,7 @@ export default (app) => {
           })
       })
       .catch(error => {
+        console.log('ici');
         console.log(error);
         User.create({
           email: req.body.email,
