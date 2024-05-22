@@ -5,6 +5,10 @@ export default (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
+    spotifyId: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: {

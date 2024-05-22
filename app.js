@@ -19,6 +19,7 @@ import createReply from './src/routes/reply/createReply.js'
 import deleteReply from './src/routes/reply/deleteReply.js'
 import getReplies from './src/routes/reply/getReplies.js'
 import handleGoogle from './src/routes/handleGoogle.js'
+import spotify from './src/routes/spotify.js'
 
 const app = express()
 const port = process.env.PORT || 3333
@@ -44,6 +45,7 @@ removeAccount(app)
 updateEmail(app)
 updatePassword(app)
 handleGoogle(app)
+spotify(app)
 
 //Review
 createReview(app)
