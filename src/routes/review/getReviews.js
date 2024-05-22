@@ -2,7 +2,7 @@ import { Review } from '../../db/sequelize.js';
 
 export default (app) => {
   app.get('/api/getReviews', (req, res) => {
-    const { type, id, idMusic, userId, idAlbum, idArtist, userPhoto } = req.query;
+    const { type, id, idMusic, userId, idAlbum, idArtist, userPhoto, userEmail, artistPhoto } = req.query;
 
     let findOptions = {
       order: [['createdAt', 'DESC']],
@@ -29,8 +29,16 @@ export default (app) => {
       findOptions.where.idArtist = idArtist;
     }
 
+    if (userEmail) {
+      findOptions.where.userEmail = userEmail;
+    }
+
     if (userPhoto) {
       findOptions.where.userPhoto = userPhoto;
+    }
+
+    if (artistPhoto) {
+      findOptions.where.artistPhoto = artistPhoto;
     }
 
     Review.findAll(findOptions)

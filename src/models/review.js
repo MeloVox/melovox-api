@@ -9,7 +9,15 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    userEmail: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     userPhoto: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    artistPhoto: {
       type: DataTypes.STRING,
       allowNull: true,
     },
